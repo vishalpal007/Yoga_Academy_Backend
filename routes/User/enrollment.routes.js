@@ -5,19 +5,19 @@ const enrollmentController = require("../../controller/User/enrollmentController
 // ========== USER ROUTES ==========
 
 // Enroll in a course
-router.post("/enroll/:courseId", enrollmentController.enrollCourse);
+router.post("/:courseId", enrollmentController.enrollCourse);
 
 // Confirm payment
-router.put("/enroll/confirm/:enrollmentId", enrollmentController.confirmPayment);
+router.put("/confirm/:enrollmentId", enrollmentController.confirmPayment);
 
 // Get user's enrollments
-router.get("/enroll/my-enrollments", enrollmentController.getUserEnrollments);
+router.get("/my-enrollments", enrollmentController.getUserEnrollments);
 
 // Get course content (after enrollment)
-router.get("/enroll/course-content/:courseId", enrollmentController.getCourseContent);
+router.get("/course-content/:courseId", enrollmentController.getCourseContent);
 
 // Update video/course progress
-router.put("/enroll/progress/:enrollmentId", enrollmentController.updateProgress);
+router.put("/progress/:enrollmentId", enrollmentController.updateProgress);
 
 
 // ========== ADMIN ROUTES ==========

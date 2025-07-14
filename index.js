@@ -44,8 +44,10 @@ mongoose.connect(process.env.MONGO_URL)
 
 app.use("/api/v1/user/auth", require("./routes/User/userAuth.routes"));
 app.use("/api/v1/admin/auth", require("./routes/Admin/adminAuth.routes"));
-app.use("/api/v1/admin/course", require("./routes/Course/course.routes"));
-app.use("/api/v1", require("./routes/User/enrollment.routes"));
+app.use("/api/v1/admin/course", require("./routes/Admin/course.routes"));
+app.use("/api/v1/course", require("./routes/User/course.routes"));
+app.use("/api/v1/user/enroll", require("./routes/User/enrollment.routes"));
+app.use("/api/v1/admin/enroll", require("./routes/Admin/enroll.routes"));
 app.use("/api/v1/live-session", require("./routes/Admin/liveSession.routes"));
 
 
