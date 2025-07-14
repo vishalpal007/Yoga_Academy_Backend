@@ -41,14 +41,15 @@ mongoose.connect(process.env.MONGO_URL)
         process.exit(1);
     });
 
-
-app.use("/api/v1/user/auth", require("./routes/User/userAuth.routes"));
+// Admin Routes
+app.use("/api/v1/admin/enroll", require("./routes/Admin/enroll.routes"));
 app.use("/api/v1/admin/auth", require("./routes/Admin/adminAuth.routes"));
 app.use("/api/v1/admin/course", require("./routes/Admin/course.routes"));
+app.use("/api/v1/admin/live-session", require("./routes/Admin/liveSession.routes"));
+// User Routes
+app.use("/api/v1/user/auth", require("./routes/User/userAuth.routes"));
 app.use("/api/v1/course", require("./routes/User/course.routes"));
 app.use("/api/v1/user/enroll", require("./routes/User/enrollment.routes"));
-app.use("/api/v1/admin/enroll", require("./routes/Admin/enroll.routes"));
-app.use("/api/v1/live-session", require("./routes/Admin/liveSession.routes"));
 
 
 app.all('/*splat', (req, res) => {
